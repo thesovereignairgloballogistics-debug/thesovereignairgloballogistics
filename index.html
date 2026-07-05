@@ -450,7 +450,28 @@ gap:25px;
     <progress id="step5" value="0" max="100" style="width:100%;"></progress>
 
 </div>
-<script>
+<div id="shipmentInfo" style="display:none; margin-top:20px; background:#fff; padding:20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+
+    <h3 style="color:#0B2C57;">Shipment Details</h3>
+
+    <p><strong>Tracking Number:</strong> <span id="showTracking"></span></p>
+
+    <p><strong>Sender:</strong> John Smith</p>
+
+    <p><strong>Receiver:</strong> David Wilson</p>
+
+    <p><strong>Origin:</strong> London, United Kingdom</p>
+
+    <p><strong>Destination:</strong> New York, USA</p>
+
+    <p><strong>Service:</strong> Air Freight Express</p>
+
+    <p><strong>Weight:</strong> 18 kg</p>
+
+    <p><strong>Estimated Delivery:</strong> 18 August 2026</p>
+
+</div>
+    <script>
 const trackingData = {
     "SAG100001": {
         status: "✅ Shipment received",
