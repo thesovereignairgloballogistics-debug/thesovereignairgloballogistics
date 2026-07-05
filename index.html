@@ -450,5 +450,57 @@ gap:25px;
     <progress id="step5" value="0" max="100" style="width:100%;"></progress>
 
 </div>
+<script>
+const trackingData = {
+    "SAG100001": {
+        status: "✅ Shipment received",
+        step: 1
+    },
+    "SAG100002": {
+        status: "✈️ Shipment is in transit",
+        step: 3
+    },
+    "SAG100003": {
+        status: "🛃 Shipment has cleared customs",
+        step: 4
+    },
+    "SAG100004": {
+        status: "🚚 Shipment is out for delivery",
+        step: 5
+    },
+    "SAG100005": {
+        status: "📦 Shipment has been delivered",
+        step: 5
+    }
+};
+
+function trackShipment() {
+    const number = document.getElementById("trackingNumber").value.trim().toUpperCase();
+    const result = document.getElementById("trackingResult");
+
+    // Reset progress bars
+    for (let i = 1; i <= 5; i++) {
+        document.getElementById("step" + i).value = 0;
+    }
+
+    if (trackingData[number]) {
+        result.innerHTML =
+            "<span style='color:green;font-weight:bold;font-size:18px;'>" +
+            trackingData[number].status +
+            "</span>";
+
+        for (let i = 1; i <= trackingData[number].step; i++) {
+            document.getElementById("step" + i).value = 100;
+        }
+
+        document.getElementById("trackingTimeline").style.display = "block";
+    } else {
+        result.innerHTML =
+            "<span style='color:red;font-weight:bold;font-size:18px;'>❌ Tracking number not found.</span>";
+
+        document.getElementById("trackingTimeline").style.display = "none";
+    }
+}
+</script>
 </body>
   </html>
