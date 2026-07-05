@@ -430,25 +430,25 @@ gap:25px;
 <a href="https://wa.me/4472843155827" class="whatsapp-float" target="_blank">
     💬
 </a>
-   <script>
-const trackingData = {
-    "SAG100001": "✅ Shipment received and awaiting dispatch.",
-    "SAG100002": "✈️ Shipment is in transit.",
-    "SAG100003": "🛃 Shipment has cleared customs.",
-    "SAG100004": "🚚 Shipment is out for delivery.",
-    "SAG100005": "📦 Shipment has been delivered."
-};
+   <div id="trackingResult" style="margin-top:25px;"></div>
 
-function trackShipment() {
-    const number = document.getElementById("trackingNumber").value.trim().toUpperCase();
-    const result = document.getElementById("trackingResult");
+<div id="trackingTimeline" style="display:none; margin-top:30px;">
 
-    if (trackingData[number]) {
-        result.innerHTML = "<span style='color:green;font-weight:bold;'>" + trackingData[number] + "</span>";
-    } else {
-        result.innerHTML = "<span style='color:red;font-weight:bold;'>Tracking number not found.</span>";
-    }
-}
-   </script> 
+    <p>📦 Order Received</p>
+    <progress id="step1" value="0" max="100" style="width:100%;"></progress>
+
+    <p>🚚 Dispatched</p>
+    <progress id="step2" value="0" max="100" style="width:100%;"></progress>
+
+    <p>✈️ In Transit</p>
+    <progress id="step3" value="0" max="100" style="width:100%;"></progress>
+
+    <p>🛃 Customs Clearance</p>
+    <progress id="step4" value="0" max="100" style="width:100%;"></progress>
+
+    <p>🏠 Delivered</p>
+    <progress id="step5" value="0" max="100" style="width:100%;"></progress>
+
+</div>
 </body>
   </html>
