@@ -525,6 +525,9 @@ function trackShipment() {
         }
 
         document.getElementById("trackingTimeline").style.display = "block";
+    document.getElementById("trackingNum").innerText = number;
+document.getElementById("senderName").innerText = trackingData[number].sender;
+document.getElementById("receiverName").innerText = trackingData[number].receiver;
     } else {
         result.innerHTML =
             "<span style='color:red;font-weight:bold;font-size:18px;'>❌ Tracking number not found.</span>";
