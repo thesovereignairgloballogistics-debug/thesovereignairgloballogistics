@@ -552,6 +552,11 @@ function trackShipment() {
     document.getElementById("trackingNum").innerText = number;
 document.getElementById("senderName").innerText = trackingData[number].sender;
 document.getElementById("receiverName").innerText = trackingData[number].receiver;
+   document.getElementById("origin").innerText = trackingData[number].origin;
+document.getElementById("destination").innerText = trackingData[number].destination;
+document.getElementById("service").innerText = trackingData[number].service;
+document.getElementById("weight").innerText = trackingData[number].weight;
+document.getElementById("delivery").innerText = trackingData[number].delivery;
     } else {
         result.innerHTML =
             "<span style='color:red;font-weight:bold;font-size:18px;'>❌ Tracking number not found.</span>";
